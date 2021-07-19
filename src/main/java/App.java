@@ -18,7 +18,7 @@ public class App {
             try {
                 DHTxx sensor = new DHT22(RaspiPin.GPIO_07);
                 sensor.init();
-                System.out.println("Успешно. Измеряемс каждые 5 минут.");
+                System.out.println("Успешно. Измеряем каждые 5 минут.");
                 while (true) {
                     DHTData data = sensor.getData();
                     Measure measure = data.toMeasure();
