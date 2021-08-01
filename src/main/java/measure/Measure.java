@@ -42,7 +42,7 @@ public class Measure {
     public String toString() {
         DateTimeFormatter dateFormat = DateTimeFormatter.ofPattern("dd.MM.yyyy");
         DateTimeFormatter timeFormat = DateTimeFormatter.ofPattern("HH:mm:ss");
-        return String.format("Дата: %s;\nВремя: %s;\nТемпература: %.1f°C;\nВлажность: %.1f%%.", date.format(dateFormat),
+        return String.format("Date: %s;\n Time: %s;\nTemperature: %.1f°C;\nHumidity: %.1f%%.", date.format(dateFormat),
                 date.format(timeFormat), temperature, humidity);
     }
 }
