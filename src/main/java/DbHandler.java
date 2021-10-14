@@ -39,7 +39,7 @@ public class DbHandler {
 
     public void addMeasure(Measure measure) {
         try (PreparedStatement ps = this.connection
-                .prepareStatement("INSERT INTO measure(`date`, `temperature`, `humidity`, `pressure`) " + "VALUES(?, ?, ?)")) {
+                .prepareStatement("INSERT INTO measure(`date`, `temperature`, `humidity`, `pressure`) " + "VALUES(?, ?, ?, ?)")) {
             ps.setObject(1, measure.getDate());
             ps.setObject(2, measure.getTemperature());
             ps.setObject(3, measure.getHumidity());

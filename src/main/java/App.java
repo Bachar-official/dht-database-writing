@@ -15,16 +15,16 @@ public class App {
         Integer SLEEP_PERIOD = 300000;
         DbHandler handler = null;
 
-        System.out.println("Инициализация БД...");
+        System.out.println("Database initialization...");
         try {
             handler = DbHandler.getInstance();
-            System.out.println("Успешно. Инициализация сенсора...");
+            System.out.println("Success. Sensor initialization...");
             try {
                 BME280 bme = new BME280();
-                System.out.println("Успешно. Измеряем каждые 5 минут.");
+                System.out.println("Success. Measuring every 5 minutes.");
                 while (true) {
                     Measure measure = bme.getMeasure();
-                    System.out.println("Измерение:\n" + measure.toString());
+                    System.out.println("Measure:\n" + measure.toString());
                     handler.addMeasure(measure);
                     Thread.sleep(SLEEP_PERIOD);
                 }

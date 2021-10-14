@@ -134,7 +134,7 @@ public class BME280 {
         p = (p - (var2 / 4096.0)) * 6250.0 / var1;
         var1 = ((double) dig_P9) * p * p / 2147483648.0;
         var2 = p * ((double) dig_P8) / 32768.0;
-        double pressure = (p + (var1 + var2 + ((double) dig_P7)) / 16.0) / 100;
+        double pressure = (p + (var1 + var2 + ((double) dig_P7)) / 16.0) / 100 * 0.750064;
 
         // Humidity offset calculations
         double var_H = (((double) t_fine) - 76800.0);
