@@ -23,9 +23,17 @@ public class App {
                 BME280 bme = new BME280();
                 System.out.println("Success. Measuring every 5 minutes.");
                 while (true) {
-                    Measure measure = bme.getMeasure();
+                    Measure measure = new Measure(0.0, 0.0, 0.0);
+                    try {                        
+                        measure = bme.getMeasure();
+                    } catch (Exception e)
+                    {
+                        System.out.println("Something went wrong!");
+                    }
                     System.out.println("Measure:\n" + measure.toString());
-                    handler.addMeasure(measure);
+                    if (measure.getHumidity() != 0.0) {
+                        handler.addMeasure(measure);
+                    }                    
                     Thread.sleep(SLEEP_PERIOD);
                 }
 

@@ -17,6 +17,7 @@ public class BME280 {
         // Get I2C device, BME280 I2C address is 0x76(108)
         I2CDevice device = bus.getDevice(0x76);
         byte[] b1 = new byte[24];
+        
         device.read(0x88, b1, 0, 24);
 
         // Convert the data
