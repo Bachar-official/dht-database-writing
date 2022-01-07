@@ -28,7 +28,7 @@ public class App {
                         measure = bme.getMeasure();
                     } catch (Exception e)
                     {
-                        System.out.println("Something went wrong!");
+                        e.printStackTrace();
                     }
                     System.out.println("Measure:\n" + measure.toString());
                     if (measure.getHumidity() != 0.0) {
